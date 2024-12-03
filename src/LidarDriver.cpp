@@ -1,6 +1,7 @@
 //Gruppo: 8bit
 
 #include "LidarDriver.h"
+#include <iostream>
 
 // Costruttore
 LidarDriver::LidarDriver(double ang) : ris_ang{ang}, v(BUFFER_DIM), numEl{static_cast<int>(180/ang+1)}, numScans{0}, nextInsert{0} {}
