@@ -5,9 +5,9 @@ REVISIONE DEL PROGETTO DEL GRUPPO 8BIT
     }
 - Avrebbero dovuto aggiungere più commenti, in quanto mancano spiegazioni dettagliate, specie in sezioni più critiche come la gestione del buffer circolare, oppire in new_scan e in get_scan
 - Alcuni nomi delle variabili, ad esempio v e v2, potrebbero avere nomi più descrittivi per una leggibilità migliore.
-- la funzione get_scan risulta errata, in quanto non restituisce la scansione più vecchia ma quella più recente. Cioe con ogni esecuzione di get_scan eliminiamo la scansione piu recente(Pur sempre salvandola su una variabile se necessario^).
-- Aggiungiendo 10 scan al buffer, poi aggiungendone un altro, si ha che "Ultimo Insert"* dia il risultato corretto cioe la posizione del ultimo scan inserito sul buffer con indice a partire da 1. Pero usando get_scan, che in questo caso toglie la scansione piu recente, si trova un problema, siccome "Ultimo insert" ci da un indice inesistente. 
+- la funzione get_scan risulta errata, in quanto non restituisce la scansione più vecchia ma quella più recente. Ovvero, con ogni esecuzione di get_scan, eliminiamo la scansione più recente (pur salvandola su una variabile, se necessario^).
+- Aggiungendo 10 scansioni al buffer e poi inserendone un'altra, la variabile "Ultimo Insert" dà il risultato corretto, ossia la posizione dell'ultimo scan inserito nel buffer, con indice a partire da 1. Tuttavia, usando get_scan() (che in questo caso rimuove la scansione più recente), si verifica un problema: "Ultimo Insert" fornisce un indice inesistente.
 
-^ Utilizzando std::vector<double> VARIABLE_NAME = laser1.get_scan(), salviamo lo scan su una variabile, sempre eliminandola dal buffer.
-* "Ultimo insert" mostra quale riga del buffer contiene lo scan piu recente. Fa questo stampando la variabile NextInsert variabile fondamentale nel codice che mostra su quale posizione del bufffer inserire il prossimo scan.Intanto NextInsert continua ha eseguire il suo compito principale correttamente.
+^ Utilizzando std::vector<double> VARIABLE_NAME = laser1.get_scan(), salviamo la scansione in una variabile, eliminandola comunque dal buffer.
+* "Ultimo Insert" mostra quale riga del buffer contiene lo scan più recente. Questo viene realizzato stampando la variabile NextInsert, una variabile fondamentale nel codice che indica in quale posizione del buffer inserire la prossima scansione. Nel frattempo, NextInsert continua a svolgere correttamente il suo compito principale.
 
