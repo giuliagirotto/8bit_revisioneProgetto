@@ -6,3 +6,4 @@ REVISIONE DEL PROGETTO DEL GRUPPO 8BIT
 - Avrebbero dovuto aggiungere più commenti, in quanto mancano spiegazioni dettagliate, specie in sezioni più critiche come la gestione del buffer circolare, oppire in new_scan e in get_scan
 - Alcuni nomi delle variabili, ad esempio v e v2, potrebbero avere nomi più descrittivi per una leggibilità migliore.
 - la funzione get_scan risulta errata, in quanto non restituisce la scansione più vecchia ma quella più recente.
+- Aggiungiendo 10 scan al buffer, poi aggiungendone un altro, si ha che "Ultimo Insert" dia il risultato corretto cioe la posizione del ultimo scan inserito sul buffer con indice a partire da 1. Pero usando get_scan, che in questo caso toglie la scansione piu recente, si trova un problema, siccome "Ultimo insert" ci da un indice inesistente. "Ultimo insert" stampa il valore di "Next insert" che continua a funzionare correttamente 
