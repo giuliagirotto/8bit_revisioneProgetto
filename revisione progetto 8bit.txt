@@ -1,0 +1,8 @@
+REVISIONE DEL PROGETTO DEL GRUPPO 8BIT
+- Si potrebbe aggiungere un controllo sulla risoluzione angolare (ris_angle) nel costruttore per verificare che l'angolo sia nel range [0.1, 1] e stampare errore se non lo è.
+  if (ris_ang < 0.1 || ris_ang > 1) {
+        throw std::invalid_argument("La risoluzione angolare deve essere tra 0.1 e 1 gradi.");
+    }
+- Avrebbero dovuto aggiungere più commenti, in quanto mancano spiegazioni dettagliate, specie in sezioni più critiche come la gestione del buffer circolare, oppire in new_scan e in get_scan
+- Alcuni nomi delle variabili, ad esempio v e v2, potrebbero avere nomi più descrittivi per una leggibilità migliore.
+- la funzione get_scan risulta errata, in quanto non restituisce la scansione più vecchia ma quella più recente.
