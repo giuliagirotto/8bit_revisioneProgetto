@@ -8,5 +8,6 @@ REVISIONE DEL PROGETTO DEL GRUPPO 8BIT
 - la funzione get_scan risulta errata, in quanto non restituisce la scansione più vecchia ma quella più recente. Cioe con ogni esecuzione di get_scan eliminiamo la scansione piu recente(Pur sempre salvandola su una variabile se necessario^).
 - Aggiungiendo 10 scan al buffer, poi aggiungendone un altro, si ha che "Ultimo Insert"* dia il risultato corretto cioe la posizione del ultimo scan inserito sul buffer con indice a partire da 1. Pero usando get_scan, che in questo caso toglie la scansione piu recente, si trova un problema, siccome "Ultimo insert" ci da un indice inesistente. 
 
+^ Utilizzando std::vector<double> VARIABLE_NAME = laser1.get_scan(), salviamo lo scan su una variabile, sempre eliminandola dal buffer.
 * "Ultimo insert" mostra quale riga del buffer contiene lo scan piu recente. Fa questo stampando la variabile NextInsert variabile fondamentale nel codice che mostra su quale posizione del bufffer inserire il prossimo scan.Intanto NextInsert continua ha eseguire il suo compito principale correttamente.
-^ Utilizzando std::vector<double> VARIABLE_NAME = lidar.get_scan
+
