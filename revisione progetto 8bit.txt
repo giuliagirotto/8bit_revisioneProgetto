@@ -7,6 +7,12 @@ REVISIONE DEL PROGETTO DEL GRUPPO 8BIT
 - Alcuni nomi delle variabili, ad esempio v e v2, potrebbero avere nomi più descrittivi per una leggibilità migliore.
 - la funzione get_scan risulta errata, in quanto non restituisce la scansione più vecchia ma quella più recente. Ovvero, con ogni esecuzione di get_scan, eliminiamo la scansione più recente (pur salvandola su una variabile, se necessario^).
 - Aggiungendo 10 scansioni al buffer e poi inserendone un'altra, la variabile "Ultimo Insert" dà il risultato corretto, ossia la posizione dell'ultimo scan inserito nel buffer, con indice a partire da 1. Tuttavia, usando get_scan() (che in questo caso rimuove la scansione più recente), si verifica un problema: "Ultimo Insert" fornisce un indice inesistente.
+- Avrebbero dovuto aggiungere una verifica dell'output di laser1.get_distance(angle) in caso il valore sia = -1
+    if (distance != -1) {
+      std:: cout << "Lettura per angolo " << angle << ": " << distance << std::end1;
+    } else {
+      std::cout << "Distanza non valida per l'angolo " << angle << std::end1;
+    }
 
 ^ Utilizzando std::vector<double> VARIABLE_NAME = laser1.get_scan(), salviamo la scansione in una variabile, eliminandola comunque dal buffer.
 * "Ultimo Insert" mostra quale riga del buffer contiene lo scan più recente. Questo viene realizzato stampando la variabile NextInsert, una variabile fondamentale nel codice che indica in quale posizione del buffer inserire la prossima scansione. Nel frattempo, NextInsert continua a svolgere correttamente il suo compito principale.
